@@ -5,7 +5,8 @@
     flake-utils.url = "github:numtide/flake-utils";
     mach-nix.url = "mach-nix/3.4.0";
     mach-nix.inputs.nixpkgs.follows = "nixpkgs";
-    mach-nix.inputs.pypi-deps-db.url = "github:DavHau/pypi-deps-db";
+    # seems to constantly update the flake lock...
+    # mach-nix.inputs.pypi-deps-db.url = "github:DavHau/pypi-deps-db";
   };
   outputs = { self, nixpkgs, flake-utils, mach-nix }:
     # TODO: possibly use this pattern to freeze mach inputs: https://github.com/nesyamun/nix-flake-python-example/blob/main/flake.nix
@@ -31,7 +32,6 @@
           pyright
           python3Packages.aiohttp
           python3Packages.cupy
-          python3Packages.openbabel-bindings
           python3Packages.pathvalidate
           python3Packages.pint
           python3Packages.pyarrow
